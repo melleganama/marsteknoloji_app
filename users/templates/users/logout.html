@@ -1,0 +1,38 @@
+{% extends 'home/layout.html' %}
+
+{% load static %}
+
+
+
+
+{% block body %}
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-wrap">
+            <div class="container-fluid">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'home:index' %}">Home</a></li>
+                    <li class="breadcrumb-item active">Logout</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+    
+
+         
+        <!-- Login Start -->
+        <div class="login mb-5">
+            <div class="container-fluid">
+                <div class="row justify-content-md-center">
+
+                        <div class="col-ml-8">
+                            <h2> You Have Been Logged Out <a href="{% url 'users:login' %}" class="btn ml-2"> Log In Again!</a> </h2>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- Login End -->
+
+
+{% endblock body %}

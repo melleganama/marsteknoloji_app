@@ -1,0 +1,60 @@
+{% extends 'home/layout.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+
+{% block body %}
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-wrap">
+            <div class="container-fluid">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'home:index' %}">Home</a></li>
+                    <li class="breadcrumb-item active">Login</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+    
+
+         
+        <!-- Login Start -->
+        <div class="login mb-5">
+            <div class="container-fluid">
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-8">    
+                        <form class="register-form" method="POST">
+
+                            {% csrf_token %}
+                            
+                                <legend class="border-bottom mb-4" style="color: black">Log In</legend>
+                                <div class="col-md-9">
+                                    {{ form | crispy}}
+                                </div>
+
+                                <div class="col-md-12">
+                                    <button class="btn" type="submit">Login</button>
+
+                                    <small class="text-muted pb-3 float-right"> 
+                                        Forget Your Password?  <a href="{% url 'password_reset' %}" class="ml-2"> Click Here !</a>
+                                    </small>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="col-md-8">
+                            <small class="text-muted pb-3"> 
+                                Need An Account?  <a href="{% url 'users:register' %}" class="btn ml-2">Sign Up</a>
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Login End -->
+
+
+{% endblock body %}

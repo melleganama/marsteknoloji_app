@@ -1,0 +1,35 @@
+   
+   <!-- manage store Nav Bar Start -->
+   <div class="nav">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <a href="#" class="navbar-brand">MANAGE MENU</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+                {% if user.is_authenticated %}
+                    <div class="navbar-nav ml-auto">
+                        <div class="row">
+
+                        {% if user.is_staff %}
+                            <div class="nav-item dropdown">
+                                <a href="{% url 'products:all_products' %}" class="dropdown-item"><i class="fa fa-book fa-fw mr-1" aria-hidden="true"></i>All Products</a>
+                            </div>     
+                            <div class="nav-item dropdown">
+                                <a href="{% url 'products:add_product' %}" class="dropdown-item"><i class="fa fa-shopping-bag mr-1" aria-hidden="true"></i>Add Product</a>
+                            </div>    
+                            <div class="nav-item dropdown">
+                                <a href="{% url 'products:manage_users' %}" class="dropdown-item"><i class="fa fa-user-circle mr-1" aria-hidden="true"></i>Manage Users</a>
+                            </div>                       
+                        {% endif %}
+                    </div>
+                    </div>
+                
+                {% endif %}
+
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- manage store  Nav Bar End -->   
